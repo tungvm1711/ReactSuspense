@@ -49,3 +49,18 @@ export async function fetchMovieReviews(id) {
 
   return details.reviews.reviews;
 }
+
+function fetch(url) {
+  return new Promise((resolve. reject) => {
+    const req = new XMLHttpRequest()
+    req.open('GET', url, true)
+    req.send()
+    req.addEventListener('load', e => {
+      resolve(req.responseText)
+    })
+    req.addEventListener('error', e => {
+      reject(e)
+    })
+  })
+
+}
