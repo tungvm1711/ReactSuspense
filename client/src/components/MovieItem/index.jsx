@@ -9,10 +9,11 @@ export default class MovieItem extends React.Component {
     }
 
     render() {
+    console.log(this.props);
         return (
             <div className="divWrapper">
-                <h1>MovieTitle</h1>
-                <p>point</p>
+                <h1>{this.props.title}</h1>
+                <p>{this.props.rating}</p>
             </div>
         );
     }

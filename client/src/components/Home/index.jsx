@@ -22,12 +22,25 @@ getAddress (id) {
  .map(res => res.json());
  }
 
+ renderList() {
+  let movieData = this.props.skills.home;
+   return movieData.map((movies) => {
+     return (
+       <MovieItem
+         id={movies.id}
+         title={movies.title}
+         rating={movies.ratings.critics_score}
+       />
+     );
+   });
+}
+
   render() {
-  console.log(this.props.skills);
+  console.log(this.props.skills.home);
     return (
       <div className="container">
         <h1>The Movies Blog</h1>
-        <MovieItem />
+        {this.renderList()}
       </div>
     );
   }
